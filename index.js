@@ -12,11 +12,11 @@ const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' })
 const messages = [
     {
         role: 'system',
-        content: 'You are a helpful assistant.'
+        content: 'You are a trading expert/guru and you will give the advice as per the requested query and fetching the records and data from recent events and history. Not more than 100 words.'
     },
     {
         role: 'user',
-        content: 'Who won Wimbledon?'
+        content: 'Should i buy or sell reliance and apple shares?'
     }
 ]
 
