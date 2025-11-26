@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <title>ArtMatch 👩‍🎨</title>
+        <link rel="stylesheet" href="generate.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <nav class="main-nav">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <span style="color: white; font-weight: 700; font-size: 1.2em;">ArtMatch</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="generate.html" class="nav-link active">Generate</a>
+                </div>
+            </div>
+        </nav>
+        <div class="content-wrapper">
+            <h1>ArtMatch 👩‍🎨</h1>
+            <p class="subtitle">Transform your words into beautiful art</p>
+            <div id="output-img" class="frame">
+                <h2>Describe a famous painting without saying its name or the artist!</h2>
+            </div>
+            <div class="input-container">
+                <div class="api-toggle-container">
+                    <span class="toggle-label" id="pollinations-label">pAI</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="api-toggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="toggle-label" id="huggingface-label">hFAI</span>
+                </div>
+                <p class="api-indicator" id="api-indicator">Using: <strong>hFAI</strong></p>
+                <textarea placeholder="A woman with long brown hair standing in front of a green vista with cloudy skies..." id="instruction"></textarea>
+                <button id="submit-btn">Create Art</button>
+            </div>
+        </div>
+        <script type="module" src="generate.js"></script>
+    </body>
+</html>
+

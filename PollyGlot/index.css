@@ -2,20 +2,68 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #f6f6f6;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
 }
 
 * {
     box-sizing: border-box;
 }
 
+/* Navigation */
+.main-nav {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2em;
+}
+
+.nav-logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2em;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    background-color: #46ff90;
+    color: black;
+}
+
 header {
     display: flex;
     justify-content: center;
-    padding: 1em;
-    background-color: black;
-    max-width: 500px;
-    margin: 0 auto;
+    padding: 2em 1em;
+    max-width: 600px;
+    margin: 2em auto;
 }
 
 header img {
@@ -25,6 +73,9 @@ header img {
 main {
     display: flex;
     justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2em;
 }
 
 /* Panels */
@@ -32,17 +83,22 @@ main {
 .action-panel, .output-panel {
     line-height: 1.4em;
     display: flex;
-    height: 350px;
+    min-height: 400px;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin: 1.5em 2em;
+    margin: 1.5em 0;
+    background: white;
+    border-radius: 15px;
+    padding: 2em;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
 }
 
 .output-panel {
     display: none;
     justify-content: flex-start;
-    border: 2px solid;
+    border: 2px solid #667eea;
     padding: 1em 2em;
 }
 
@@ -106,8 +162,16 @@ label {
 
 input[type="text"] {
     padding: 1em;
-    border: 2px solid black;
+    border: 2px solid #667eea;
     border-right: none;
+    border-radius: 8px 0 0 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #764ba2;
 }
 
 /* Buttons */
@@ -115,11 +179,19 @@ input[type="text"] {
 .add-ticker-btn {
     display: flex;
     align-items: center;
-    background-color: #ffffff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     font-size: 3em;
     padding: 0 .35em;
     cursor: pointer;
-    border: 2px solid;
+    border: 2px solid #667eea;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    transition: all 0.3s ease;
+}
+
+.add-ticker-btn:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: scale(1.05);
 }
 
 .add-ticker-svg {
@@ -132,11 +204,24 @@ input[type="text"] {
     cursor: pointer;
     font-family: 'Poppins', sans;
     border: 2px solid #000000;
-    background-color: #46ff90;
+    background: linear-gradient(135deg, #46ff90 0%, #2dd4bf 100%);
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: .09em;
     font-size: 105%;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(70, 255, 144, 0.3);
+}
+
+.generate-report-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(70, 255, 144, 0.4);
+}
+
+.generate-report-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 /* ticker display (ensure comma separated) */
@@ -159,6 +244,9 @@ input[type="text"] {
 footer {
     font-size: 14px;
     text-align: center;
+    padding: 2em;
+    color: white;
+    margin-top: 2em;
 }
 
 /* stop ugly scroll bar on some browsers */
